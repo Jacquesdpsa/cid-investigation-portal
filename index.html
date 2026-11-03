@@ -38,7 +38,7 @@ const $=id=>document.getElementById(id);
 let sb=null,user=null,cases=[],directory={suspects:[],vehicles:[],gangs:[]},activeCase=null,activeTab='Overview',currentPage='dashboard',saveTimer=null;
 const blankData=()=>({summary:'',location:'',dateOpened:new Date().toISOString().slice(0,10),leadOfficer:'',notes:'',suspects:[],vehicles:[],evidence:[],timeline:[],gangs:[],nextAction:'',conclusion:''});
 const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const SUPABASE_URL='https://xnpeukncadcdvujrudhp.supabase.co/rest/v1/';
+const SUPABASE_URL='https://xnpeukncadcdvujrudhp.supabase.co';
 const SUPABASE_KEY='sb_publishable_4rBmTXhHr2OFGnRCkrGr4A_5n4v_yZi';
 function initClient(){if(sb)return true;try{sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);return true}catch(e){return false}}
 function loginMsg(t,cls='muted'){ $('loginMsg').className='small '+cls;$('loginMsg').textContent=t}
